@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/styleRecado.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <title>GrowTask - Recados</title>
+</head>
+<body>
+    <main class="container-fluid">
+        
+        <div class="row">
+            <nav class="navbar bg-dark">
+                <img src="./assets/img/growTask.png" class="rounded float-start img-tamanho" alt="Logo do sistema GrowTask">
+                <h1> <span class="grow">Grow</span><span class="task">Task</span></h1>
+                <button id="btnSAIR" class="btn btn-outline-info me-4" type="button">SAIR</button>
+            </nav>
+        </div>
+        
+        <p class="h3 mt-3" style="margin-left: 13%;">Seja bem vindo, <span class="nameUserLogado"></span></p>
+
+        <div class="d-flex justify-content-center">
+            <div id="fundoMobile" class="shadow-lg w-75 p-5 mb-5 mt-3 bg-body rounded">
+                
+                <form id="formRecado" class="row g-3 needs-validation" novalidate="">
+
+                    <div class="input-group mb-1 p-0">
+                        <span class="input-group-text bg-info text-light">Descrição:</span>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="inputDescricao" placeholder="recado" value="" autocomplete="off" required>
+                            <label for="inputDescricao">Escreva o recado</label>
+                        </div>
+                    </div>
+                    <small class="erroRecado">Preecher o campo recado ...</small>
+                    
+                    <div class="input-group mb-3 p-0">
+                        <span class="input-group-text bg-info text-light p-3">Detalhes:</span>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="inputDetalhes" placeholder="detalhes" autocomplete="off" required>
+                            <label for="inputDetalhes">Detalhes do recado</label>
+                        </div>
+                    </div>
+                    <small class="erroDetalhes">Preecher o campo detalhes ...</small>
+                    <button type="button" id="btnAdicionar" class="btn btn-primary btn-sm w-25 m-auto">Adicionar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div id="fundoMobile" class="shadow-lg w-75 p-5 mb-5 mt-4 bg-body rounded">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th class="m-auto" scope="col">Cod</th>
+                                <th class="m-auto" scope="col">Descrição</th>
+                                <th class="m-auto" scope="col">Detalhes</th>
+                                <th class="m-auto" colspan="2">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaRecado" class="text-center">
+                            <!-- Criar a tabela dinamicamente -->
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
+    </main>
+
+  <!-- Modal EDITAR -->
+  <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+    <div class="modal-dialog modal-dialog-centered">
+      
+        <div class="modal-content">
+           
+            <div class="modal-header bg-dark text-white">
+                <h4 class="modal-title" id="exampleModalLabel"> 
+                    <span class="grow">Grow</span><span class="task">Task</span> </h4> <h4> <span class="edit-text">- EDITANDO RECADO - </span></h4>
+            </div>
+
+        <div class="modal-body">
+          
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="descricaoEditar" placeholder="Descricao" autocomplete="off">
+                <label for="descricaoEditar">Descrição:</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="detalhesEditar" placeholder="Detalhes" autocomplete="off">
+                <label for="detalhesEditar">Detalhes:</label>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+          <button id="salvarEditRecado" type="button" data-bs-dismiss="modal" class="btn btn-primary btn-sm">Salvar</button>
+        </div>
+
+      </div> <!-- modal conteudo-->
+    </div> <!-- tipo modal centralizado-->
+  </div> <!-- final modal Editar-->
+
+  <!-- Modal EXCLUIR -->
+
+  <div class="modal fade" id="modalExcluir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+    <div class="modal-dialog modal-dialog-centered">
+      
+        <div class="modal-content">
+           
+            <div class="modal-header bg-dark text-white">
+                <h4 class="modal-title" id="exampleModalLabel"> 
+                   <img src="./assets/img/growTask.png" class="rounded float-start img-tamanho-excluir" alt="Logo do sistema GrowTask"> 
+                </h4> 
+                <span class="delete-text">CONFIRMAR A EXCLUSÃO DO RECADO? </span>
+            </div>
+
+        <div class="modal-body">
+          
+            <h4 class="delete-text-h4">Deseja realmente excluir este recado? </h4>        
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <button id="excluirRecado" type="button" data-bs-dismiss="modal" class="btn btn-danger btn-sm">Excluir</button>
+        </div>
+
+      </div> <!-- modal conteudo-->
+    </div> <!-- tipo modal centralizado-->
+  </div> <!-- final modal excluir-->
+
+    <footer class="page-footer">
+        <div class="row text-light text-center bg-dark p-4">
+            <small>&copy Desenvolvido por Mauricio Lima - <span class="grow">&regGrow</span><span class="task">Task</span></small>
+        </div>
+    </footer>
+
+    <script src="./assets/js/recado.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

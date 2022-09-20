@@ -1,0 +1,245 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-45deg, #f0fe71, #2dc990, #53bbf8, #1d32f2);
+    background-size: 300% 300%;
+    animation: gradiente 10s ease alternate infinite;
+    overflow-x: hidden;
+}
+
+
+@keyframes gradiente {
+    0%{
+        background-position: 0 50%;
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+.nameUserLogado{
+    color: #1d32f2;
+    text-shadow: 0 0 15px #a5ea1a, 0 0 15px #11b9d0;
+    animation: gradiente-two 1s ease alternate infinite;
+}
+
+@keyframes gradiente-two{
+    0%{
+        background-position: 0 50%;
+        text-shadow: 0px 0px 20px #020202;
+
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+h1{
+    font-weight: 800;
+}
+
+.h3{
+    font-weight: 800; 
+}
+
+.grow{
+    color: #08A1E4;
+}
+.task{
+    color: #13DFDC;
+}
+
+.img-tamanho{
+    width: 150px;
+    margin-left: 25px;
+}
+
+.img-tamanho-excluir{
+    width: 100px;
+}
+
+.navbar > button{
+    padding: 2px 15px;
+}
+
+.form-floating > label{
+    font-size: .9rem;
+}
+
+.input-group > span{
+
+    font-size: .8rem;
+}
+
+.btnTable > button{
+    padding: 4px;
+    margin: 0 3px;
+    font-size: .8rem;
+}
+
+.btnTable{
+    width: 10px;
+}
+
+.idTable{
+    width: 1px;
+}
+
+
+#fundoMobile{
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .7)!important;
+}
+
+.erroRecado{
+    visibility: hidden;
+    position: relative;
+    top: -20px;
+    color: red;
+    margin-bottom: -30px;
+    font-size: .7rem;
+}
+
+.erroDetalhes{
+    visibility: hidden;
+    position: relative;
+    top: -30px;
+    color: red;
+    margin-bottom: -30px;
+    font-size: .7rem;
+}
+
+.erroRecado.visible{
+    visibility: visible!important;
+}
+
+.erroDetalhes.visible{
+    visibility: visible!important;
+}
+
+footer{
+    margin-top: 14vh;
+}
+
+.edit-text, .delete-text{
+    margin-right: 65px;
+}
+
+
+/* ------ Mobile ------- */
+
+@media (max-width: 768px){
+    .navbar > h1{
+        font-size: 3rem;
+        padding-left: 20px;
+    }
+    .navbar > img{
+        display: none;
+    }
+    .table{
+        font-size: .8rem;
+    }
+    #fundoMobile{
+        width: 95%!important;
+        padding: 15px!important;
+    }
+
+    footer{
+        margin-top: 17vh;
+    }
+    .btnTable > button{
+        margin: 0 2px;
+        padding: 2px;
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 600px){
+    .navbar > h1{
+        font-size: 1.9rem;
+    }
+    .form-floating > label{
+        font-size: .8rem;
+    }
+    #fundoMobile{
+        width: 95%!important;
+        padding: 15px!important;
+    }
+    #btnAdicionar{
+        width: 100px!important;
+    }
+    .h3{
+        font-weight: 500;
+        margin-left: 5px!important;
+        font-size: 1.1rem; 
+    }
+    .table{
+        font-size: .7rem;
+    }
+
+    .btnTable > button{
+        margin: 0 2px;
+        padding: 2px;
+        font-size: .7rem;
+    }
+
+    footer{
+        margin-top: 28vh;
+    }
+
+}
+
+@media (max-width: 500px){
+
+    .delete-text{
+        margin-right: 20px;
+    }
+
+}
+
+
+@media (max-width: 470px){
+
+    .img-tamanho-excluir{
+       width: 70px;
+   }
+
+   .delete-text{
+       margin-right: 20px;
+       margin-left: 5px;
+       font-size: .8rem;
+       text-align: center;
+   }
+
+   .delete-text-h4{
+        font-size: 1rem;
+   }
+
+   .edit-text{
+    text-align: center;
+    font-size: 1rem;
+}
+
+}
+
+@media (max-width: 400px){
+    .edit-text{
+        margin-right: 2px;
+        text-align: center;
+        font-size: .8rem;
+    }
+}
+
+
+@media (max-width: 300px){
+    .navbar > h1{
+        font-size: 1.5rem;
+    }
+    #fundoMobile{
+        width: 100%!important;
+        padding: 15px!important;
+    }
+
+    .edit-text{
+        display: none;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="stylesheet" href="./assets/css/styleIndex.css">
+    <title>GrowTask</title>
+</head>
+<body>
+    <main class="main-index">
+        <section class="login-container">
+
+            <div class="loading">
+                <div> 
+                   <img src="./assets/img/loading.gif" alt="Loading recados" srcset=""> <strong class="p-3"> Dados OK! Acessando o sistema!</strong>  
+                </div>
+            </div>
+            
+            <div class="mensagemInfo"><i class="fa-solid fa-triangle-exclamation"></i>Verifique e-mail e senha, ou cadastre-se!</div>
+
+            <div class="form-container">
+                    
+                <form id="form-login" class="form form-login" action="">
+                    <div class="img-logo-login">
+                        <img src="./assets/img/growTask.png" alt="Logo do sistema GrowTask" srcset="">
+                    </div>
+                    <h1>Acessar <span class="grow">Grow</span><span class="task">Task</span></h1>
+                    <hr>
+                    <div class="form-input-container">
+                        <label for="email">E-mail:</label>
+                        <input class="focoSelecionado" type="email" name="email" id="email" placeholder="Digite seu e-mail aqui" autocomplete="off" required> 
+
+                        <label for="password">Senha:</label>
+                        <input class="focoSelecionado" type="password" name="password" id="password" placeholder="Digite sua senha aqui" required>
+                    </div>
+                    
+                    <button id="botaoLogin" type="button">LOGIN</button>
+                    <p class="mobile-login">Não tem conta? <span> <a href="#" id="link-mobile-cadastrar">Cadastre-se</a> </span> </p>
+                        
+                </form>
+            
+            <div class="mensagemInfo2"></div>
+            <div class="mensagemInfo3"></div>
+
+                <form id="form-cadastrar" class="form form-cadastro" action="">
+                    <h1>Criar conta</h1>
+                    <hr>
+                    <div class="form-input-container">
+                        <label for="emailCad">E-mail:</label>
+                        <input class="focoSelecionado" type="email" name="emailCad" id="emailCad" placeholder="Digite seu e-mail aqui" autocomplete="off" required> 
+
+                        <label for="passwordCad">Senha:</label>
+                        <input class="focoSelecionado" type="password" name="passwordCad" id="passwordCad" placeholder="Digite sua senha aqui" required>
+
+                        <label for="passwordCadConfirm">Confirmar senha:</label>
+                        <input class="focoSelecionado" type="password" name="passwordCadConfirm" id="passwordCadConfirm" placeholder="Repita sua senha aqui" required>
+                    </div>
+                    
+                    <button id="botaoCadastrar" type="button">CADASTRAR</button>
+                    <p class="mobile-login">Já tem conta? <span> <a href="#" id="link-mobile-login"> Entrar</a> </span> </p>
+
+                </form>
+           </div> <!-- form-container -->
+        
+           <div class="sobreposicao-container">
+        
+                <div class="sobreposicao-info">
+                    <div class="img-logo">
+                        <img src="./assets/img/growTask.png" alt="Logo do sistema GrowTask" srcset="">
+                    </div>
+                    <p>Já tem conta?</p>
+                    <span>Para entrar no sistema faça login com seus dados</span>
+                    <button id="btnSobreLogar" class="sobreposicao-button">ENTRAR</button>
+                </div>
+
+                <div class="sobreposicao-info">
+                    <div class="img-logo">
+                        <img src="./assets/img/growTask.png" alt="Logo do sistema GrowTask" srcset="">
+                    </div>
+                    <p>Olá, tudo bem?</p>
+                    <span>Cadastre-se e comece a usar o nosso sistema</span>
+                    <button id="btnSobreCadastrar" class="sobreposicao-button">CADASTRAR-SE</button>
+                </div>
+
+           </div> <!-- sobreposicao-container-->
+        </section>
+    </main>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/cadastro.js"></script>
+    <script src="./assets/js/alerta.js"></script>
+    <script src="./assets/js/indexTrocarContainer.js"></script>
+    <script src="https://kit.fontawesome.com/79704f5c5a.js" crossorigin="anonymous"></script>
+</body>
+</html>
